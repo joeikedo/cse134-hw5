@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Ikedo's Technical Skills</title>
+    <link rel="icon" href="media/computer_icon.svg" />
+    <style>
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="defaultStyle.css" media="screen" type="text/css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <input type="checkbox" id="hamburgerToggle"/>
+                <label for="hamburgerToggle" id="hamburgerButton"></label>
+                <ul id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="technicalSkills.html">Technical Skills</a></li>
+                    <li><a href="passionProjects.html">Passion Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="skillsMainBlock" class="contentMainBlock">
+        <h1 class="pageHeader">Technical Skills & Credentials</h1>
+
+        <div id="skillsContainer">
+            <section id="educationSection">
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <p><b>Bachelor of Science in Computer Science</b>, (University of California, San Diego)</p>
+                        <p>GPA: 3.97 <br> <i>08/2020 - 12/2022</i></p>
+                    </li>
+                    <li>
+                        <p><b>Associate of Arts, Liberal Arts - Mathematics and Sciences</b>, (MiraCosta College)</p>
+                        <p>GPA: 4.0 <br> <i>01/2017 - 05/2020</i></p>
+                    </li>
+                </ul>
+            </section>
+        
+            <section id="skillsSection">
+                <h2>Skills and Certifications</h2>
+                <table>
+                    <caption>Skills Table</caption>
+                    <colgroup>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tr>
+                        <th>Computer Languages:</th>
+                        <td>Java, Python, C++, HTML/CSS, JavaScript, Shell Scripting, Clojure</td>
+                    </tr>
+                    <tr>
+                        <th>Hardware/Architecture:</th>
+                        <td>SystemVerilog, x86</td>
+                    </tr>
+                    <tr>
+                        <th>Software:</th>
+                        <td>VSCode, JetBrains, GitHub, Git</td>
+                    </tr>
+                    <tr>
+                        <th>Operating Systems:</th>
+                        <td>Unix, Windows</td>
+                    </tr>
+                    <tr>
+                        <th>Certifications:</th>
+                        <td>MTA Introduction to Programming Using Java - Certified 2020</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="projectsSection">
+                <h2>Previous Projects</h2>
+                <ul>
+                    <li>
+                        <h3>Bullet Journal</h3>
+                        <a href="https://github.com/cse110-sp21-group30/cse110-sp21-group30">GitHub Link</a>
+                        <p>University of California, San Diego - Spring 2021</p>
+                        <ul>
+                            <li>Collaborated remotely with a team of 8 classmates, designed and developed a <em>Bullet Journal WebApp</em>.</li>
+                            <li>Implemented end-to-end tests with Puppeteer and helped refine CI/CD pipeline, adhered to group
+                                style guide and practiced regular documentation.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Graph Class</h3>
+                        <p>University of California, San Diego - Fall 2020</p>
+                        <ul>
+                            <li>Created a C++ class that takes a given CSV edgelist to construct a graph object that supports
+                                Breadth-First search, Dijkstra's algorithm, and utilizes disjoint sets with path compression/union by size
+                                optimizations to find the smallest connecting threshold weight for a pair of nodes.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="workSection">
+                <h2>Work Experience</h2>
+                <h3>Research Assistant</h3>
+                <p id="jobDetails">University of California, San Diego <i>01/2022 - Present</i></p>
+                <ul>
+                    <li>Collaborated with a small group of graduate students and fellow undergrads in order to deploy 800 smart plugs across several campus buildings. Worked to integrate the plug controls into the campus' current building management system Metasys &copy;.</li>
+                    <li>Wrote scripts to help automate the construction of RDF files to map out the utilities and equipment of buildings and their relationships/locations.</li>
+                    <li>Helped write Unit tests for code coverage, specifically pertaining to external server data retrieval.</li>
+                </ul>
+            </section>
+        </div>
+
+    </main>
+</body>
+</html>

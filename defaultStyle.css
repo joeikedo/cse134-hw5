@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@700&display=swap');
+
+:root{
+    /*Note: I intended to use these 3 view width variables for breakpoint media queries. However
+    it seems that this is not possible without using SCSS or plugins. 
+    (Source: https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries)
+    
+    --view-width-large: 1920px;
+    --view-width-medium: 1280px;
+    --view-width-small: 620px;
+    */
+
+    --background-page-color: #f0ebd7;
+    --nav-active-color: lightblue;
+    --top-margin-height: 65px;
+    --top-margin-height-mobile: 83px;
+    --nav-height: 60px;
+    --nav-font-size: 1.5em;
+    --nav-transition-time: 0.5s;
+    --profile-photo-border-radius: 25px;
+    --media-icon-width: 50px;
+    --nav-padding-top-bottom: 14px;
+    --nav-padding-left-right: 16px;
+    --nav-width: 100vw;
+    --nav-text-color: black;
+    --nav-shadow-size: 5px;
+
+    --hamburger-offset: 30px;
+    --renpy-figure-width: 500px;
+    --video-width: 550px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-page-color)
+}
+
+.pageHeader{
+    text-align: center;
+}
+
+.contentMainBlock{
+    margin-top: var(--top-margin-height);
+}
+
+/* Nav Bar Desktop Default */
+
+nav{
+    position: fixed;
+    top: 0;
+    width: var(--nav-width);
+    margin-left: -50vw;
+    left: 50%;
+    height: var(--nav-height);
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style-type: none;
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
+}
+
+nav li:last-child{
+    border-right: none;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+nav a{
+    display: block;
+    color: var(--nav-text-color);
+    text-align: center;
+    padding: var(--nav-padding-top-bottom) var(--nav-padding-left-right);
+    text-decoration: none;
+    font-size: var(--nav-font-size);
+    white-space: nowrap;
+}
+
+nav a:hover{
+    background-color: var(--nav-active-color);
+    transition: background-color var(--nav-transition-time) ease-out;
+}
+
+.active {
+    background-color: var(--nav-active-color);
+}
+
+
+/* Home Page */
+
+/*Note: Ocean background photo from Harli Marten: https://unsplash.com/photos/n7a2OJDSZns*/
+/*Note: I intended to use these 3 view width variables for breakpoint media queries. However
+    it seems that this is not possible without using SCSS or plugins. 
+    (Source: https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries)*/
+
+@media screen and (max-width: 620px){
+    #videoWithDescription *{
+        width: 250px;
+    }
+
+    #gameMedia figure *{
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 621px) and (max-width: 1280px){
+    #homeBody{
+        background:url(media/ocean_background_medium.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    #videoWithDescription *{
+        width: 350px;
+    }
+
+    #gameMedia figure *{
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1920px){
+    #homeBody{
+        background:url(media/ocean_background_large.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    #videoWithDescription *{
+        width: 500px;
+    }
+
+    #gameMedia figure *{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1921px){
+    #homeBody{
+        background:url(media/ocean_background_extra_large.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    #videoWithDescription *{
+        width: 650px;
+    }
+
+    #gameMedia figure *{
+        width: 650px;
+    }
+}
+
+#homeMainBlock{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+#homeMainBlock > h1{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-left: 25%;
+    padding-top: 12%;
+}
+
+#homeMainBlock > p{
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    margin-left: 25%;
+}
+
+#homeMainBlock > picture{
+    grid-row: 1 / span 3;
+    grid-column: 3;
+    margin-right: 40%;
+    margin-top: 4%;
+}
+
+#socialMediaIcons{
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    margin-left: 35%;
+    padding-bottom: 17%;
+}
+
+#socialMediaIcons > ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+} 
+
+#socialMediaIcons li{
+    display: inline-block;
+    width: var(--media-icon-width);
+    transition: transform .7s ease-in-out;
+}
+
+#socialMediaIcons li:hover{
+    transform: rotate(360deg);
+}
+
+#profilePhoto{
+    border-radius: var(--profile-photo-border-radius);
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
+}
+
+
+/* Technical Skills */
+
+#skillsMainBlock h2{
+    margin-left: 1em;
+    text-decoration: underline;
+}
+
+#skillsMainBlock h3{
+    margin-left: 1.3em;
+}
+
+#skillsMainBlock table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#jobDetails{
+    margin-left: 1.5em;
+}
+
+#skillsContainer{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#skillsContainer > section{
+    border: solid black 1px;
+}
+
+/* Passion Projects */
+
+#passionMainBlock h2{
+    text-decoration: underline;
+}
+
+#gamedevSection{
+    margin-bottom: 4%;
+    border-bottom: solid black 1px;
+    padding-bottom: 5%;
+}
+
+#gameMedia * {
+    margin: 0;
+    padding: 0;
+} 
+
+#gameMedia{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gameMedia > figure{
+    max-width: var(--renpy-figure-width);
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
+    padding: 1em;
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
+}
+
+#videoWithDescription{
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
+    padding: 1em;
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
+}
+
+#modelingSection ul {
+    margin: 0;
+    padding: 0;
+}
+
+#modelingSection > ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#modelingSection > ul > li{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modelingSection ul li img{
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
+}
+
+
+/* Contact */
+
+#contactMainBlock h1{
+    animation-duration: 1.5s;
+    animation-name: slideText;
+}
+
+#contactInfoHeader{
+    animation-duration: 1s;
+    animation-name: slideText;
+}
+
+#mediaOutletsHeader{
+    animation-duration: 0.5s;
+    animation-name: slideText;
+}
+
+
+@keyframes slideText {
+    from {
+      margin-left: 100%;
+      width: 120%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+#contactMainBlock h2{
+    text-align: center;
+}
+
+#contactMainBlock ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contactMainBlock ul li:first-child{
+    margin-bottom: 1em;
+}
+
+#contactMainBlock ul li:last-child{
+    margin-bottom: 1em;
+}
+
+
+#contactMainBlock ol{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+#contactMainBlock ol li:first-child{
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+#contactMainBlock ol li:last-child{
+    margin-left: 2%;
+    margin-right:auto;
+}
+
+#contactMainBlock ol li{
+    transition: transform .7s ease-in-out;
+}
+
+#contactMainBlock ol li:hover{
+    transform: rotate(360deg);
+}
+
+#contactFooter{
+    text-align: center;
+}
+
+#message{
+    width: calc(100vw/1.5);
+    height: 10em;
+}
+
+#emailSubmitButton{
+    margin-top: 1em;
+    height: 3em;
+    width: 8em;
+}
+
+
+/* Hamburger Navbar for Mobile size screen */
+
+#hamburgerToggle{
+    display: none;
+}
+
+#hamburgerButton{
+    display: none;
+}
+
+@media screen and (max-width: 620px){
+
+    #homeBody{
+        background:url(media/ocean_background_small.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* Hide the navbar boxes*/
+    nav ul{
+        visibility: collapse;
+    }
+    
+    #hamburgerButton{
+        background:url(media/hamburger_icon.svg) no-repeat;
+        background-color: white;
+        display: inline-block; 
+        position: fixed;
+        height: var(--media-icon-width);
+        width: var(--media-icon-width);
+        top: var(--hamburger-offset);
+        left: var(--hamburger-offset);
+        border: 2px solid;
+        border-radius: 3px;
+        user-select: none;
+    }
+
+    #hamburgerToggle:checked ~ #navList{
+        margin-top: var(--top-margin-height-mobile);
+        visibility: visible;
+        grid-template-columns: 1fr ;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #hamburgerToggle:checked ~ #hamburgerButton{
+        background:url(media/cross_icon.svg) no-repeat;
+        background-color: white;
+    }
+
+
+    /* Rearrange Homepage Grid for Mobile*/
+
+    #homeMainBlock{
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr; 
+    }
+    
+    #homeMainBlock > h1{
+        grid-row: 1;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0%;
+    }
+
+    #homeMainBlock > picture{
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #homeMainBlock > p{
+        grid-row: 3;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #socialMediaIcons{
+        grid-row: 4;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #socialMediaIcons li:first-child{
+        margin-right: 5em;
+    }
+
+
+    /* Rearrange Skills Grid for Mobile*/
+
+    #skillsContainer{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .contentMainBlock{
+        margin-top: var(--top-margin-height-mobile);
+    }
+
+}

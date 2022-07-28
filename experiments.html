@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <link rel="icon" href="media/computer_favicon.png" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="technicalSkills.html">Technical Skills</a></li>
+                <li><a href="passionProjects.html">Passion Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Experiments (I will prune this tab later)</h1>
+
+        <hr>
+
+        <h2>Canvas Japanese Flag</h2>
+        <canvas id="japaneseFlag" width="200" height="110" style="border:1px solid #b9b9b9;">
+            Sorry, your browser doesn't support this canvas element.
+        </canvas> 
+        <script>
+            var canvas = document.getElementById('japaneseFlag');
+            var context = canvas.getContext('2d');
+            var centerX = canvas.width / 2;
+            var centerY = canvas.height / 2;
+            var radius = 32;
+
+            context.beginPath();
+            context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+            context.fillStyle = 'red';
+            context.fill();
+            context.strokeStyle = '#ff0000';
+            context.stroke();
+        </script> 
+
+        <hr>
+
+        <h2>Python Code Snippet</h2>
+        <pre><code>
+            import pandas as pd
+
+            data = {
+            "calories": [420, 380, 390],
+            "duration": [50, 40, 45]
+            }
+            
+            #load data into a DataFrame object:
+            df = pd.DataFrame(data)
+            
+            print(df) </code></pre>
+
+        <hr>
+
+        <h2>iframe of page from Homework 1</h2>
+        <iframe src="https://heartfelt-souffle-ee6e31.netlify.app/" title="Homework 1 Site Embedded" height="300" width="800"></iframe>
+
+        <hr>
+
+        <h2>The "Shoryuken!" Sound Effect from Street Fighter</h2>
+        <audio controls>
+            <source src="media/shoryuken_sound_effect.mp3" type="audio/mp3">
+        Sorry, your browser doesn't support this audio element.
+        </audio>
+
+        <hr>
+
+        <h2>Template Tag Example</h2>
+        <p>You can see this text!</p>
+        <template><p>You can't see this text though!</p></template>
+
+        <hr>
+
+        <h2>SVG Red Square</h2>
+        <p> This is a red square
+            <span>
+                <svg width="100" height="100">
+                    <rect width="100" height="100" style="fill:rgb(255, 0, 0);" />
+                </svg>
+            </span>
+        </p>
+
+        <hr>
+
+        <h2>Aside Example</h2>
+
+        <section>
+            <h3>Cats as pets</h3>
+            <p>Cats are very soft and very nice. There are many different types of cats around the world</p>
+            <aside><p>Dogs are also wonderful pets.</p></aside>
+            <p>Resuming the feline discussion, cats are very wonderful companions.</p>
+        </section>
+
+        <hr>
+
+        <h2>Theme Select</h2>
+        <label for="themeOptions">Choose a theme:</label>
+        <input list="themes" id="themeOptions" name="themeOptions" />
+        <datalist id="themes">
+            <option value="Light">
+            <option value="Dark">
+            <option value="Rainbow">
+        </datalist>
+
+        <hr>
+
+        <h2>Ice Cream Select</h2>
+        <label for="iceCreamSelect">Choose an Ice Cream Flavor:</label>
+        <select name="iceCreamFlavor" id="iceCreamSelect">
+            <optgroup label="Standard Flavors">
+                <option value="chocolate">Chocolate</option>
+                <option value="vanilla">Vanilla</option>
+            </optgroup>
+            <optgroup label="Fruity Flavors">
+                <option value="strawberry">Strawberry</option>
+                <option value="lime">Lime</option>
+            </optgroup>
+        </select>
+    </main>
+
+</body>
+</html>

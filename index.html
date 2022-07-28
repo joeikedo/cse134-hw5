@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Ikedo's Homepage</title>
+    <link rel="icon" href="media/computer_icon.svg" />
+    <link rel="stylesheet" href="defaultStyle.css" media="screen" type="text/css"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKRN8VQCLK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VKRN8VQCLK');
+    </script>
+</head>
+<body id="homeBody">
+    <header>
+        <nav>
+            <div>
+                <input type="checkbox" id="hamburgerToggle"/>
+                <label for="hamburgerToggle" id="hamburgerButton"></label>
+                <ul id="navList">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="technicalSkills.html">Technical Skills</a></li>
+                    <li><a href="passionProjects.html">Passion Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="homeMainBlock">
+        <h1>I'm Joe Ikedo</h1>
+        <p>I'm a senior <strong>Computer Science</strong> major at UCSD and software development is what I'm passionate about. 
+            I'm interested in WebDev, GameDev, Cybersecurity and much more.</p>
+        <picture>
+            <img id="profilePhoto" srcset="media/selfie_small.jpg 230w, media/selfie.jpg 300w" sizes="(max-width: 620px) 230px,
+            300px" src="media/selfie.jpg" alt="Joe Ikedo Selfie">
+        </picture>
+        <div id="socialMediaIcons">
+            <ol>
+                <li>
+                    <a href="https://github.com/joeikedo">
+                        <img src="media/github_logo.svg" alt="Github Profile Link">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joe-ikedo/">
+                        <img src="media/linkedin_logo.svg" alt="LinkedIn Profile Link">
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <!--Note: Ocean background photo from Harli Marten: https://unsplash.com/photos/n7a2OJDSZns-->
+    <!--SVG Icons (GitHub, Linkedin, Favicon, Hamburger, Cross X, all from https://www.svgrepo.com/svg/109824/computer-screen [Creative Commons 0 license])-->
+
+</body>
+</html>

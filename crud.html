@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <script type="module" src="scripts/blog.js"></script>
+    <script>
+        //Shows the delete modal when delete button is clicked.
+        function deletePost(input) {
+          window.currentPostId = input;
+          document.getElementById('deletePostDialog').showModal();
+        }
+        //Shows the edit modal when edit button is clicked, and prefills it with current post title/date/summary.
+        function editPost(parentId, summary, title, date){
+          window.currentPostId = parentId;
+          document.getElementById('editPostInput').value = summary;
+          document.getElementById('editTitle').value = title;
+          document.getElementById('editDate').value = date;
+          document.getElementById('editPostDialog').showModal();
+        }
+    </script>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <p id="emptyListNotice"></p>
+    <ul id="postList">
+
+    </ul>
+
+    <button type="button" id="addPostButton">Add Post</button>
+
+    <dialog id="addPostDialog">
+        <label for="addTitle">Title: </label>
+        <input id="addTitle" type="text">
+        <br>
+        <label for="addDate">Date: </label>
+        <input id="addDate" type="date">
+        <br>
+        <label for="postInput">Summary: </label>
+        <input id="postInput" type="text">
+        <form method="dialog">
+          <button value="ok">OK</button>
+          <button value="cancel">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="deletePostDialog">
+      <p>Delete Post?</p>
+      <form method="dialog">
+        <button value="ok">OK</button>
+        <button value="cancel">Cancel</button>
+      </form>
+  </dialog>
+
+  <dialog id="editPostDialog">
+    <label for="editTitle">Title: </label>
+    <input id="editTitle" type="text">
+    <br>
+    <label for="editDate">Date: </label>
+    <input id="editDate" type="date">
+    <br>
+    <label for="editPostInput">Summary: </label>
+    <input id="editPostInput" type="text">
+    <form method="dialog">
+      <button value="ok">OK</button>
+      <button value="cancel">Cancel</button>
+    </form>
+  </dialog>
+
+
+</body>
+</html>

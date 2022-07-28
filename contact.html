@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Joe Ikedo</title>
+    <link rel="icon" href="media/computer_icon.svg" />
+    <link rel="stylesheet" href="defaultStyle.css" media="screen" type="text/css"/>
+    <script type="module" src="scripts/contact.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <input type="checkbox" id="hamburgerToggle"/>
+                <label for="hamburgerToggle" id="hamburgerButton"></label>
+                <ul id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="technicalSkills.html">Technical Skills</a></li>
+                    <li><a href="passionProjects.html">Passion Projects</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contactMainBlock" class="contentMainBlock">
+        <!--These overflow:hidden divs are to keep animation from expanding page-->
+        <div style="overflow:hidden;">
+            <h1 class="pageHeader">Contact Joe Ikedo</h1>
+        </div>
+
+        <hr>
+
+        <section>
+            <div style="overflow:hidden;">
+                <h2 id="contactInfoHeader">Contact Info</h2>
+            </div>
+            <ul>
+                <li>joeikedo@gmail.com</li>
+                <li><span class="phoneNumber">(760) 277-5668</span></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <div style="overflow:hidden;">
+                <h2 id="mediaOutletsHeader">Media Outlets</h2>
+            </div>
+            <ol>
+                <li>
+                    <a href="https://github.com/joeikedo">
+                        <img src="media/github_logo.svg" alt="Github Profile Link">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joe-ikedo/">
+                        <img src="media/linkedin_logo.svg" alt="LinkedIn Profile Link">
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <hr>
+
+    </main>
+
+    <footer id="contactFooter">
+        <h2>Email Me</h2>
+        <form>
+            <fieldset>
+                <legend>Email Details</legend>
+                <!-- <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" name="userEmail" autofocus> -->
+                <label for="subjectLine">Subject</label>
+                <input type="text" id="subjectLine" name="subjectLine" autofocus>
+                <br><br>
+                <label for="message">Message</label>
+                <br>
+                <textarea id="message" name="message"></textarea>
+                <br>
+                <button id="emailSubmitButton" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </footer>
+
+</body>
+</html>

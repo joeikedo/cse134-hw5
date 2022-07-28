@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        ol{
+            text-align: center;
+        }
+        li{
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.js"></script>
+    <script type="module" src="scripts/part1.js"></script>
+</head>
+<body>
+    <ol>
+        <li><button type="button" id="alertButton">Alert</button></li>
+
+        <li><button type="button" id ="confirmButton">Confirm</button></li>
+
+        <li><button type="button" id="promptButtonUnsafe">Prompt</button></li>
+
+        <li><button type="button" id="promptButtonSafe">Safer Prompt</button></li>
+
+        <output for="confirmButton promptButtonUnsafe promptButtonSafe" id="outputTag"></output>
+    </ol>
+</body>
+</html>

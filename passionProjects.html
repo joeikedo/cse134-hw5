@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Ikedo's Passion Projects</title>
+    <link rel="icon" href="media/computer_icon.svg" />
+    <link rel="stylesheet" href="defaultStyle.css" media="screen" type="text/css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <input type="checkbox" id="hamburgerToggle"/>
+                <label for="hamburgerToggle" id="hamburgerButton"></label>
+                <ul id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="technicalSkills.html">Technical Skills</a></li>
+                    <li><a class="active" href="passionProjects.html">Passion Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="passionMainBlock" class="contentMainBlock">
+        <h1 class="pageHeader">Passion Projects & Dev Hobbies</h1>
+
+        <div id="passionContainer">
+            <section id="gamedevSection">
+                <h2>GameDev</h2>
+                <p> 
+                    My hobby is working on projects in the Unity game engine, and also occassionally the RenPy engine as well. 
+                    These engines use C# and python scripts respectively. I primarily use Unity for 3D game projects, whereas RenPy
+                    is an engine designed for Visual Novels. I have a link to a small Unity repo as well for those interested. 
+                    <a href="https://github.com/joeikedo/Project-Boost">(Link to small Unity game Repo)</a>. I have also included some
+                    videos and images below.
+                </p>
+
+                <div id="gameMedia">
+                    <div id="videoWithDescription">
+                        <video controls loop autoplay>
+                            <source src="media/game_animation.mp4" type="video/mp4">
+                            Sorry, your browser doesn't support embedded videos.
+                        </video>
+                        <p>
+                        I modeled and rigged this character in Blender (more on that below), and imported the asset to the Unity engine.
+                        </p>
+                    </div>
+
+                    <figure>
+                        <img srcset="media/renpy_menu_small.png 250w, media/renpy_menu_medium.png 350w, media/renpy_menu_large.png 500w" sizes="(max-width: 620px) 350px, (max-width: 1281px) 500px, 500px" src="media/blender_model1.png" alt="A screenshot of my Visual Novel Project">
+                        <figcaption>RenPy is an open source game engine that allows you to customize practically every aspect 
+                            of the UI via Python scripting.
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </section>  
+
+            <section id="modelingSection">
+                <h2>Computer Graphics Modeling</h2>
+                <p>My 3D modeling hobby also intersects nicely with my gamedev pursuits. I create models and assets in 
+                    <a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>, and from there can import them 
+                    into a Unity project library. I am also getting into designing my own 2D UI elements as well, which Blender 
+                    also supports. A few of my model projects are included below. 
+                </p>
+
+                <ul>
+                    <li><img srcset="media/blender_model1_small.png 250w, media/blender_model1.png 350w, media/blender_model1_large.png 500w" sizes="(max-width: 620px) 250px, (max-width: 1650px) 350px, 500px" src="media/blender_model1.png" alt="A colorful 3D room I modeled in Blender"></li>
+                    <li><img srcset="media/blender_model2_small.png 250w, media/blender_model2.png 350w, media/blender_model2_large.png 500w" sizes="(max-width: 620px) 250px, (max-width: 1650px) 350px, 500px" src="media/blender_model2.png" alt="A well I modeled in Blender"></li>
+                    <li><img srcset="media/blender_model3_small.png 250w, media/blender_model3.png 350w, media/blender_model3_large.png 500w" sizes="(max-width: 620px) 250px, (max-width: 1650px) 350px, 500px" src="media/blender_model3.png" alt="A grey 3D room I modeled in Blender"></li>
+                </ul>
+            </section>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    background-color: #97C4B8;
+}
+
+h1{
+    margin: 0;
+    background: #CCF3EE;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    box-shadow: 0px 0px 5px black;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    border: solid black 1px;
+    padding: 1em;
+    list-style-type: none;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+    min-height: 10em;
+    box-shadow: 0px 0px 5px black;
+    background-color: #F9F3EE;
+    border-radius: 1em;
+}
+
+#deletePostDialog{
+    text-align: center;
+    min-width: 15em;
+    min-height: 5em;
+}
+
+ul > li > h2{
+    text-align: center;
+}
+
+ul > li > p:first-of-type{
+    text-align: center;
+}
+
+ul > li > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+#addPostButton{
+    position: fixed;
+    bottom: 3em;
+    right: 9em;
+    width: 10em;
+    height: 5em;
+}
+
+.editButton{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+
+    background-image: url(media/pencil_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    height: 75px;
+    width: 100px;
+}
+
+.editButton span{
+    display: none;
+}
+
+.deleteButton{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+
+    background-image: url(media/trash_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    height: 75px;
+    width: 100px;
+}
+
+.deleteButton span{
+    display: none;
+}
+
+#addPostButton{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+
+    background-image: url(media/plus_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    height: 75px;
+    width: 100px;
+}
+
+textarea{
+    min-height: 5em;
+    min-width: 20em;
+}
+
+#emptyListNotice{
+    text-align: center;
+    font-size: 3em;
+}
+
+dialog{
+    padding: 2em;
+}
+
+dialog button{
+    min-width: 7em;
+    min-height: 4em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+dialog form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
