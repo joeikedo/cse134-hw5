@@ -58,7 +58,7 @@ nav{
 
 nav ul{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     list-style-type: none;
     box-shadow: 0px 0px var(--nav-shadow-size) black;
 }
