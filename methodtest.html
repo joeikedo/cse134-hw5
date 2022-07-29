@@ -7,29 +7,26 @@
     <link rel="icon" href="media/computer_icon.svg" />
     <script type="module" src="scripts/hw5-part1.js"></script>
 </head>
+
 <body>
-    <form>
+    <form id="article_form" method="post" action="'https://httpbin.org/post">
         <fieldset>
             <legend>My Form</legend>
             <label for="id">ID</label>
             <input type="text" id="id" name="id" autofocus>
-
             <label for="article_name">Article Name</label>
             <input type="text" id="article_name" name="article_name">
-
             <label for="article_body">Article Body</label>
             <textarea id="article_body" name="article_body"></textarea>
-
             <input type="date" id="date" name="date">
-
             <br>
-
             <button type="button" id="postBtn">Post</button>
             <button type="button" id="getBtn">Get</button>
             <button type="button" id="putBtn">Put</button>
-            <button type="button" id="deleteBtn">Delete</button>
-            
+            <button type="button" id="deleteBtn">Delete</button>   
         </fieldset>
     </form>
+
+    <output id="response" for="id article_name article_body date" form="article_form"></output>
 </body>
 </html>
