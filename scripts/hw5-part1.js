@@ -27,19 +27,36 @@ function displayResponse(response){
     // console.log(keyArray[i]);
     // console.log(response[keyArray[0]]);
 
-    console.log(response);
-    console.log(response[keyArray[4]].Accept);
 
-    const internalKeyArray = Object.keys(response[keyArray[4]]);
-    console.log(internalKeyArray);
+    // console.log(response);
+    // console.log(response[keyArray[4]].Accept);
 
-    // for(let i = 0; i < keyArray.length; i++ ){
-    //     console.log(response[keyArray[i]]);
-        
-    // }
-    
+    // const internalKeyArray = Object.keys(response[keyArray[4]]);
+    // console.log(internalKeyArray);
+
     const outputTag = document.getElementById('response');
-    outputTag.innerText = JSON.stringify(response);
+
+    console.log(response);
+
+    for(let i = 0; i < keyArray.length; i++ ){
+        // console.log(keyArray[i]);
+        // console.log(response[keyArray[i]]);
+
+        const orderedList = document.createElement('ol');
+        orderedList.innerText = keyArray[i];
+
+        const listItem = document.createElement('li');
+        console.log(typeof(response[keyArray[i]]));
+
+        listItem.innerText = response[keyArray[i]];
+        orderedList.appendChild(listItem);
+        
+
+        outputTag.appendChild(orderedList);
+    }
+    
+
+    // outputTag.innerText = JSON.stringify(response);
 }
 
 
