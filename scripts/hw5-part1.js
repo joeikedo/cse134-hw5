@@ -16,8 +16,27 @@ function generatePayload(){
  * Helper function that displays the response of an HTTP request to the output HTML tag.
  */
 function displayResponse(response){
+    // console.log(response);
+    // console.log(response.args);
+    // console.log(Object.keys(response));
+    // console.log(Object.keys(response).length);
+
+    const keyArray = Object.keys(response);
+
+    // console.log(response.args);
+    // console.log(keyArray[i]);
+    // console.log(response[keyArray[0]]);
+
     console.log(response);
-    console.log(response.args);
+    console.log(response[keyArray[4]].Accept);
+
+    const internalKeyArray = Object.keys(response[keyArray[4]]);
+    console.log(internalKeyArray);
+
+    // for(let i = 0; i < keyArray.length; i++ ){
+    //     console.log(response[keyArray[i]]);
+        
+    // }
     
     const outputTag = document.getElementById('response');
     outputTag.innerText = JSON.stringify(response);
