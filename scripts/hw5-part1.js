@@ -26,19 +26,6 @@ function convertDateTime(dateObject){
     return formattedDateTime;
 }
 
-/**
- * Helper function that returns the request payload filled with the values of the form input fields. Used by
- * POST/PUT/DELETE
- */
-function generatePayload(){
-    const idTag = document.getElementById('id');
-    const articleNameTag = document.getElementById('article_name');
-    const articleBodyTag = document.getElementById('article_body');
-    const currentDate = new Date();
-
-    const payload = `id=${idTag.value}&article_name=${articleNameTag.value}&article_body=${articleBodyTag.value}&date=${currentDate}`;
-    return payload;
-}
 
 /**
  * Helper function that displays the response of an HTTP request to the output HTML tag.
@@ -92,32 +79,15 @@ function displayResponse(response){
  */
 function postFunction(){
 
-    // const xhr = new XMLHttpRequest();
-    // xhr.open('POST', 'https://httpbin.org/post');
-    // xhr.responseType = 'json';
-
-    // const payload = generatePayload();
-    // xhr.send(payload);
-
-    // xhr.onload = () =>{
-    //     displayResponse(xhr.response);
-    // };
-
-
-
-    //Trying it the FORM api way...
     const formTag = document.querySelector('form');
     const dateTag = document.getElementById('date');
-    
     const currentDateTime = new Date();
     dateTag.value = convertDateTime(currentDateTime);
-
     const payload = new FormData(formTag);
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://httpbin.org/post');
     xhr.responseType = 'json';
-
     xhr.send(payload);
 
     xhr.onload = () =>{
@@ -151,11 +121,15 @@ function getFunction(){
  */
 function putFunction(){
     
+    const formTag = document.querySelector('form');
+    const dateTag = document.getElementById('date');
+    const currentDateTime = new Date();
+    dateTag.value = convertDateTime(currentDateTime);
+    const payload = new FormData(formTag);
+
     const xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://httpbin.org/put');
     xhr.responseType = 'json';
-
-    const payload = generatePayload();
     xhr.send(payload);
 
     xhr.onload = () =>{
@@ -168,11 +142,15 @@ function putFunction(){
  */
 function deleteFunction(){
 
+    const formTag = document.querySelector('form');
+    const dateTag = document.getElementById('date');
+    const currentDateTime = new Date();
+    dateTag.value = convertDateTime(currentDateTime);
+    const payload = new FormData(formTag);
+
     const xhr = new XMLHttpRequest();
     xhr.open('DELETE', 'https://httpbin.org/delete');
     xhr.responseType = 'json';
-
-    const payload = generatePayload();
     xhr.send(payload);
 
     xhr.onload = () =>{
