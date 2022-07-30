@@ -35,38 +35,42 @@ function displayResponse(response){
     // console.log(internalKeyArray);
 
     const outputTag = document.getElementById('response');
+    outputTag.innerHTML = '';
 
     console.log(response);
 
     for(let i = 0; i < keyArray.length; i++ ){
-        // console.log(keyArray[i]);
-        // console.log(response[keyArray[i]]);
 
         const orderedList = document.createElement('ol');
         orderedList.innerText = keyArray[i];
 
         const listItem = document.createElement('li');
         if(response[keyArray[i]] === null){
-            console.log(keyArray[i] + ' has value: null');
             listItem.innerText = 'null';
         }
         else if(typeof(response[keyArray[i]]) === 'string'){
-            console.log(keyArray[i] + ' has string value: ' + response[keyArray[i]]);
             listItem.innerText = response[keyArray[i]];
         }
         else if(typeof(response[keyArray[i]]) ==='object'){
-            console.log(keyArray[i] + ' has object value: ' + response[keyArray[i]]);
             //Check if the object is empty, if so just print {}
             if(Object.keys(response[keyArray[i]]).length === 0){
                 listItem.innerText = '{}';
             }
+            else{
+                const internalObject = response[keyArray[i]];
+                const internalKeyArray = Object.keys(internalObject);
+                const internalOrderedList = document.createElement('ol');
+
+                for(let x = 0; x < internalKeyArray.length; x++){
+                    const internalListItem = document.createElement('li');
+                    internalListItem.innerText = `${internalKeyArray[x]} : ${internalObject[internalKeyArray[x]]}`;
+                    internalOrderedList.appendChild(internalListItem);
+                }
+                listItem.appendChild(internalOrderedList);
+            }
         }
 
-
-        // listItem.innerText = response[keyArray[i]];
         orderedList.appendChild(listItem);
-        
-
         outputTag.appendChild(orderedList);
     }
     
