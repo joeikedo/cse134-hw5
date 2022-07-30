@@ -46,9 +46,24 @@ function displayResponse(response){
         orderedList.innerText = keyArray[i];
 
         const listItem = document.createElement('li');
-        console.log(typeof(response[keyArray[i]]));
+        if(response[keyArray[i]] === null){
+            console.log(keyArray[i] + ' has value: null');
+            listItem.innerText = 'null';
+        }
+        else if(typeof(response[keyArray[i]]) === 'string'){
+            console.log(keyArray[i] + ' has string value: ' + response[keyArray[i]]);
+            listItem.innerText = response[keyArray[i]];
+        }
+        else if(typeof(response[keyArray[i]]) ==='object'){
+            console.log(keyArray[i] + ' has object value: ' + response[keyArray[i]]);
+            //Check if the object is empty, if so just print {}
+            if(Object.keys(response[keyArray[i]]).length === 0){
+                listItem.innerText = '{}';
+            }
+        }
 
-        listItem.innerText = response[keyArray[i]];
+
+        // listItem.innerText = response[keyArray[i]];
         orderedList.appendChild(listItem);
         
 
