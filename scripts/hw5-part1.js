@@ -1,4 +1,32 @@
 /**
+ * Converts new Date() object to YYYY-MM-DDTHH:MM format
+ * @param {Date} dateObject 
+ */
+function convertDateTime(dateObject){
+    const year = dateObject.getFullYear();
+    let month = '' + (dateObject.getMonth() + 1) ;
+    let date = '' + dateObject.getDate();
+    let hours = '' + dateObject.getHours();
+    let minutes = '' + dateObject.getMinutes();
+
+    if(month.length < 2){
+        month = '0' + month;
+    }
+    if (date.length < 2){
+        date = '0' + date;
+    }
+    if (hours.length < 2){
+        hours = '0' + hours;
+    }
+    if (minutes.length < 2){
+        minutes = '0' + minutes;
+    }
+
+    const formattedDateTime = `${year}-${month}-${date}T${hours}:${minutes}`;
+    return formattedDateTime;
+}
+
+/**
  * Helper function that returns the request payload filled with the values of the form input fields. Used by
  * POST/PUT/DELETE
  */
@@ -64,11 +92,32 @@ function displayResponse(response){
  */
 function postFunction(){
 
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', 'https://httpbin.org/post');
+    // xhr.responseType = 'json';
+
+    // const payload = generatePayload();
+    // xhr.send(payload);
+
+    // xhr.onload = () =>{
+    //     displayResponse(xhr.response);
+    // };
+
+
+
+    //Trying it the FORM api way...
+    const formTag = document.querySelector('form');
+    const dateTag = document.getElementById('date');
+    
+    const currentDateTime = new Date();
+    dateTag.value = convertDateTime(currentDateTime);
+
+    const payload = new FormData(formTag);
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://httpbin.org/post');
     xhr.responseType = 'json';
 
-    const payload = generatePayload();
     xhr.send(payload);
 
     xhr.onload = () =>{
