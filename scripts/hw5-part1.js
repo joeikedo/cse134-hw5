@@ -16,28 +16,9 @@ function generatePayload(){
  * Helper function that displays the response of an HTTP request to the output HTML tag.
  */
 function displayResponse(response){
-    // console.log(response);
-    // console.log(response.args);
-    // console.log(Object.keys(response));
-    // console.log(Object.keys(response).length);
-
     const keyArray = Object.keys(response);
-
-    // console.log(response.args);
-    // console.log(keyArray[i]);
-    // console.log(response[keyArray[0]]);
-
-
-    // console.log(response);
-    // console.log(response[keyArray[4]].Accept);
-
-    // const internalKeyArray = Object.keys(response[keyArray[4]]);
-    // console.log(internalKeyArray);
-
     const outputTag = document.getElementById('response');
     outputTag.innerHTML = '';
-
-    console.log(response);
 
     for(let i = 0; i < keyArray.length; i++ ){
 
@@ -52,7 +33,6 @@ function displayResponse(response){
             listItem.innerText = response[keyArray[i]];
         }
         else if(typeof(response[keyArray[i]]) ==='object'){
-            //Check if the object is empty, if so just print {}
             if(Object.keys(response[keyArray[i]]).length === 0){
                 listItem.innerText = '{}';
             }
