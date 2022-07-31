@@ -37,7 +37,7 @@ function displayResponse(response){
 
     for(let i = 0; i < keyArray.length; i++ ){
 
-        const orderedList = document.createElement('ol');
+        const orderedList = document.createElement('ul');
         orderedList.innerText = keyArray[i];
 
         const listItem = document.createElement('li');

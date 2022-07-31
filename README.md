@@ -9,6 +9,7 @@ PID: A16544427
 ### Part 1
 - `methodtest.html`
 - `hw5-part1.js`
+- `methodtest.css`
 
 ### Part 2
 - `webcomponent.html`
