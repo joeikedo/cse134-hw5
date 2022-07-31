@@ -3,6 +3,8 @@
 Name: Joe Ikedo
 PID: A16544427
 
+[Netlify URL](https://lovely-chimera-e04391.netlify.app/)
+
 ## HW5 Files
 ### Part 1
 - `methodtest.html`

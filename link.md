@@ -1,1 +1,5 @@
-https://fantastic-gumption-62f37a.netlify.app/
+## Part 1
+https://lovely-chimera-e04391.netlify.app/methodtest.html
+
+## Part 2
+https://lovely-chimera-e04391.netlify.app/webcomponent.html
