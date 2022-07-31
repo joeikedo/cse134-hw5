@@ -104,7 +104,12 @@ function getFunction(){
     const xhr = new XMLHttpRequest();
 
     const idTag = document.getElementById('id');
-    const endpoint = `https://httpbin.org/get?id=${idTag.value}`;
+    const articleNameTag = document.getElementById('article_name');
+    const articleBodyTag = document.getElementById('article_body');
+    const currentDateTime = new Date();
+    const currentTimeFormatted = convertDateTime(currentDateTime);
+
+    const endpoint = `https://httpbin.org/get?id=${idTag.value}&article_name=${articleNameTag.value}&article_body=${articleBodyTag.value}&date=${currentTimeFormatted}`;
 
     xhr.open('GET', endpoint);
     xhr.responseType = 'json';
